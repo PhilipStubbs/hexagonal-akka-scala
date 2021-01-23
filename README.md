@@ -1,0 +1,1 @@
+# hexagonal-scala-base

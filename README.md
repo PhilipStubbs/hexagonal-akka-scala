@@ -1,4 +1,4 @@
-# hexagonal-scala-base
+# hexagonal-akka-scala
 
 This is my attampted at creating a hexagonal service with Akka https and scala
 

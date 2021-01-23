@@ -35,10 +35,8 @@ object BootApp {
     //#server-bootstrapping
     val rootBehavior = Behaviors.setup[Nothing] { context =>
 
-
       // creates  Services
       val businessService = new BusinessService(FakeBusinessHourAdaptor)
-
 
       // creates routs
       val pingRoutes = new PingRoute()(context.system)

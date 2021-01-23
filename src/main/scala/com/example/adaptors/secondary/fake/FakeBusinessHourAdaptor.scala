@@ -8,5 +8,5 @@ object FakeBusinessHourAdaptor extends BusinessHourRepo{
 
   override def fetch(startDate: DateTime, endDate: DateTime): List[DateTime] = List(startDate,endDate)
 
-  override def delete(date: DateTime): Unit = println(s"deleteing $date")
+  override def delete(date: DateTime): Unit = println(s"deleting $date")
 }

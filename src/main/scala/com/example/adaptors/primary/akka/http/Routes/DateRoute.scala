@@ -18,12 +18,12 @@ class DateRoute(businessService: BusinessService)(implicit val system: ActorSyst
 
   val route: Route =
     pathPrefix("v1") {
-      Directives.concat (
+      Directives.concat(
         path("fetchDate") {
           get {
             entity(as[FetchDateRequest]) { request =>
 
-              businessService.fetch(DateTime.parse(request.startDate), DateTime.parse(request.endDate))
+              businessService.fetchOpenTime(DateTime.parse(request.startDate), DateTime.parse(request.endDate))
 
               complete(StatusCodes.OK, FetchDateRequest(request.startDate, request.endDate))
             }
@@ -33,12 +33,12 @@ class DateRoute(businessService: BusinessService)(implicit val system: ActorSyst
           post {
             entity(as[AddDateRequest]) { request =>
 
-              businessService.add(DateTime.parse(request.date))
+              businessService.addOpenTime(DateTime.parse(request.date))
 
               complete(StatusCodes.OK, AddDateRequest(request.date))
             }
           }
         }
-        )
+      )
     }
 }
